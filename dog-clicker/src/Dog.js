@@ -6,7 +6,7 @@ class Dog extends Component {
 		this.state = {voteCount: props.initialVote};
 	}
 
-	_handleVote() {
+	_handleVote(e) {
 		this.setState({voteCount: this.state.voteCount + 1})
 	}
 
@@ -16,7 +16,7 @@ class Dog extends Component {
 				<h2>{this.props.name}</h2>
 				<img role="presentation" src={this.props.source} />
 				<br/>
-				<button onClick={this._handleVote.bind(this)}>vote me: {this.state.voteCount}</button>
+				<button onClick={ e => this._handleVote()}>vote me: {this.state.voteCount}</button>
 			</li>
 		);
 	}
